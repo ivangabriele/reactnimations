@@ -29,7 +29,7 @@ to the remote repository.
 {
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "eslint.format.enable": true,
-  "eslint.packageManager": "yarn",
+  "eslint.packageManager": "npm",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
