@@ -1,0 +1,23 @@
+{
+  "extends": "@ivangabriele/eslint-config-react",
+  "parserOptions": {
+    "ecmaVersion": 2021
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+
+    "react/prop-types": ["error", { "ignore": ["className", "style"] }],
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["./packages/**"],
+      "rules": {
+        "react/jsx-filename-extension": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+:root,
+body,
+#__next {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-grow: 1;
+  font-family: "Poiret One", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
