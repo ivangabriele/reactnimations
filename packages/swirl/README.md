@@ -1,8 +1,63 @@
 # Reactnimations Swirl
 
+_This is a work in progress._
+
 ## Usage
 
-_This is a work in progress._
+```sh
+npm/yarn i -E @reactnimations/swirl
+```
+
+```js
+import Swirl from '@reactnimations/swirl'
+
+const MyComponents = () => (
+  <>
+    <Swirl />
+    <div style={{ position: "absolute" }}>
+      <h1>Swirl Animation as a fullscreen background!</h1>
+      <h2>What else?</h1>
+    </div>
+  </>
+)
+```
+
+### Properties
+
+Everything is optional.
+
+- `baseRef`: Element on which basing the canvas size. Otherwise, if not set, `window` will be the reference, resizing
+  the animation to the current `window` size.
+- `settings`: Animation settings. [See below.](#settings)
+
+Also, `className` and `style` are exposed.
+
+#### Settings
+
+```ts
+{
+  backgroundColor: string
+  baseHue: number
+  baseRadius: number
+  baseSpeed: number
+  baseTTL: number
+  noiseSteps: number
+  opacity: number
+  particleCount: number
+  particlePropCount: number
+  rangeHue: number
+  rangeRadius: number
+  rangeSpeed: number
+  rangeTTL: number
+  rangeY: number
+  xOff: number
+  yOff: number
+  zOff: number
+}
+```
+
+Check the [source code](https://github.com/ivangabriele/reactnimations/blob/main/packages/swirl/Animation.js) to see the
+default values.
 
 ## Credits
 

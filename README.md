@@ -2,13 +2,17 @@
 
 A library of configurable React-componentized canvas animations.
 
+_This is a work in progress._
+
 ## Demo
 
 [https://reactnimations.vercel.app](https://reactnimations.vercel.app)
 
 ## Usage
 
-_This is a work in progress._
+I will try to keep a consistent usage for all the animations:
+
+- [Swirl README](https://github.com/ivangabriele/reactnimations/tree/main/packages/swirl#readme)
 
 ## Contribution
 
