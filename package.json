@@ -2,7 +2,7 @@
   "name": "reactnimations",
   "description": "A library of configurable React-componentized canvas animations.",
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
