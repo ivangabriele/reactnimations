@@ -2,6 +2,10 @@
 
 A library of configurable React-componentized canvas animations.
 
+## Demo
+
+[https://reactnimations.vercel.app](https://reactnimations.vercel.app)
+
 ## Usage
 
 _This is a work in progress._
