@@ -3,7 +3,10 @@
   "description": "A library of configurable React-componentized canvas animations.",
   "license": "MIT",
   "version": "1.0.0",
-  "main": "./index.js",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.js"
+  },
   "dependencies": {
     "prop-types": "15.7.2",
     "simplex-noise": "2.4.0"
