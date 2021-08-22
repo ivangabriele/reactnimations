@@ -2,7 +2,7 @@
   "name": "@reactnimations/swirl",
   "description": "A library of configurable React-componentized canvas animations.",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/bundle.js",
   "types": "./index.d.ts",
   "scripts": {
