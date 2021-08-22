@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import React from 'react'
 
 import Animation from './Animation'
 
@@ -11,10 +11,10 @@ const DEFAULT_PROPS = {
 const Swirl = props => {
   const { baseRef, className, settings, style } = { ...DEFAULT_PROPS, ...props }
 
-  const canvasRef = useRef(null)
-  const [hasRendered, setHasRendered] = useState(false)
+  const canvasRef = React.useRef(null)
+  const [hasRendered, setHasRendered] = React.useState(false)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const $canvas = canvasRef.current
     const hasBaseRef = baseRef !== null
 
