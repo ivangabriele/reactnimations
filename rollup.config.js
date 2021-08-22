@@ -1,41 +1,41 @@
 import babel from '@rollup/plugin-babel'
 import cleaner from 'rollup-plugin-cleaner'
-import commonjs from 'rollup-plugin-commonjs'
-import nodeResolve from 'rollup-plugin-node-resolve'
 import sizes from 'rollup-plugin-sizes'
+import sourcemaps from 'rollup-plugin-sourcemaps'
 
-export default {
-  external: ['prop-types', 'react', 'simplex-noise'],
+const FORMATS = ['cjs', 'esm']
+
+const configs = FORMATS.map(format => ({
+  external: [/@babel\/runtime/, 'react', 'simplex-noise'],
 
   input: './index.js',
 
   output: [
     {
       exports: 'default',
-      file: './dist/bundle.js',
-      format: 'cjs',
+      file: `./dist/index.${format}.js`,
+      format,
+      sourcemap: true,
     },
   ],
 
   plugins: [
     // Clean /dist directory:
-    cleaner({ targets: ['./dist'] }),
-    // Locate dependencies via node.js resolution algorithm:
-    nodeResolve({
-      browser: true,
-      preferBuiltins: false,
-    }),
+    format === 'cjs' ? cleaner({ targets: ['./dist'] }) : null,
     // Transpile JSX to JS:
     babel({
       babelHelpers: 'runtime',
       babelrc: false,
-      exclude: /node_modules/,
-      presets: ['@babel/preset-react'],
-      skipPreflightCheck: true,
+      exclude: [/node_modules/],
+      plugins: ['@babel/transform-runtime'],
+      presets: ['@babel/preset-react', '@babel/preset-env'],
+      // skipPreflightCheck: true,
     }),
-    // Convert CommonJS modules to ES6:
-    commonjs(),
+    // Output bundle dependencies sizes:
+    sourcemaps(),
     // Output bundle dependencies sizes:
     sizes(),
   ],
-}
+}))
+
+export default [...configs]

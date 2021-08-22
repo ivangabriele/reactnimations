@@ -1,11 +1,16 @@
-import PropTypes from 'prop-types'
 import { useEffect, useRef, useState } from 'react'
 
 import Animation from './Animation'
 
 let ANIMATION_INSTANCE = null
+const DEFAULT_PROPS = {
+  baseRef: null,
+  settings: {},
+}
 
-const Swirl = ({ baseRef, className, settings, style }) => {
+const Swirl = props => {
+  const { baseRef, className, settings, style } = { ...DEFAULT_PROPS, ...props }
+
   const canvasRef = useRef(null)
   const [hasRendered, setHasRendered] = useState(false)
 
@@ -36,34 +41,6 @@ const Swirl = ({ baseRef, className, settings, style }) => {
   }, [baseRef, hasRendered, settings])
 
   return <canvas ref={canvasRef} className={className} style={style} />
-}
-
-Swirl.defaultProps = {
-  baseRef: null,
-  settings: {},
-}
-
-Swirl.propTypes = {
-  baseRef: PropTypes.element,
-  settings: PropTypes.shape({
-    backgroundColor: PropTypes.string,
-    baseHue: PropTypes.number,
-    baseRadius: PropTypes.number,
-    baseSpeed: PropTypes.number,
-    baseTTL: PropTypes.number,
-    noiseSteps: PropTypes.number,
-    opacity: PropTypes.number,
-    particleCount: PropTypes.number,
-    particlePropCount: PropTypes.number,
-    rangeHue: PropTypes.number,
-    rangeRadius: PropTypes.number,
-    rangeSpeed: PropTypes.number,
-    rangeTTL: PropTypes.number,
-    rangeY: PropTypes.number,
-    xOff: PropTypes.number,
-    yOff: PropTypes.number,
-    zOff: PropTypes.number,
-  }),
 }
 
 export default Swirl
