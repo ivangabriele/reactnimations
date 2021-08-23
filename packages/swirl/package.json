@@ -15,5 +15,25 @@
   "peerDependencies": {
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
+  },
+  "keywords": [
+    "react",
+    "aninmations",
+    "library",
+    "canvas",
+    "component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivangabriele/reactnimations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivangabriele/reactnimations/issues"
+  },
+  "homepage": "https://github.com/ivangabriele/reactnimations#readme",
+  "author": {
+    "name": "Ivan Gabriele",
+    "email": "ivan.gabriele@gmail.com",
+    "url": "https://www.ivangabriele.com"
   }
 }
