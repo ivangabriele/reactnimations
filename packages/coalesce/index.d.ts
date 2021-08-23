@@ -4,7 +4,7 @@ declare module '@reactnimations/swirl' {
   export type AnimationSettings = {
     backgroundColor: string
     baseHue: number
-    baseRadius: number
+    baseSize: number
     baseSpeed: number
     baseTTL: number
     noiseSteps: number
@@ -12,7 +12,7 @@ declare module '@reactnimations/swirl' {
     particleCount: number
     particlePropCount: number
     rangeHue: number
-    rangeRadius: number
+    rangeSize: number
     rangeSpeed: number
     rangeTTL: number
     rangeY: number
