@@ -1,6 +1,6 @@
 import { Component, LegacyRef } from 'react';
 
-declare module '@reactnimations/swirl' {
+declare module '@reactnimations/coalesce' {
   export type AnimationSettings = {
     backgroundColor: string
     baseHue: number
@@ -21,11 +21,11 @@ declare module '@reactnimations/swirl' {
     zOff: number
   }
 
-  export interface SwirlProps {
+  export interface CoalesceProps {
     baseRef?: LegacyRef<HTMLElement>
     settings?: AnimationSettings
   }
 
 
-  export default class Swirl extends Component<SwirlProps, {}> {}
+  export default class Coalesce extends Component<CoalesceProps, {}> {}
 }
