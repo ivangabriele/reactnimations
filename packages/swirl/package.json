@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.15.3",
-    "simplex-noise": "2.4.0"
+    "simplex-noise": "3.0.0"
   },
   "peerDependencies": {
     "react": "17.0.2",
