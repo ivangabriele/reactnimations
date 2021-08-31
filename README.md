@@ -13,6 +13,7 @@ _This is a work in progress._
 I will try to keep a consistent usage for all the animations:
 
 - [Coalesce README](https://github.com/ivangabriele/reactnimations/tree/main/packages/coalesce#readme)
+- [Pipeline README](https://github.com/ivangabriele/reactnimations/tree/main/packages/pipeline#readme)
 - [Swirl README](https://github.com/ivangabriele/reactnimations/tree/main/packages/swirl#readme)
 
 ## Contribution

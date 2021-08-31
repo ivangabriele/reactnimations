@@ -38,21 +38,18 @@ Also, `className` and `style` are exposed.
 {
   backgroundColor: string
   baseHue: number
-  baseRadius: number
   baseSpeed: number
   baseTTL: number
-  noiseSteps: number
-  opacity: number
-  particleCount: number
-  particlePropCount: number
+  baseWidth: number
+  opcaity: number
+  pipeCount: number
+  pipePropCount: number
   rangeHue: number
-  rangeRadius: number
   rangeSpeed: number
   rangeTTL: number
-  rangeY: number
-  xOff: number
-  yOff: number
-  zOff: number
+  rangeWidth: number
+  turnChanceRange: number
+  turnCount: number
 }
 ```
 
