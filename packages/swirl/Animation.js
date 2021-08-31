@@ -1,3 +1,4 @@
+import debounce from 'lodash.debounce'
 import SimplexNoise from 'simplex-noise'
 
 const TAU = 2 * Math.PI
@@ -96,6 +97,9 @@ export default class Animation {
     this.simplex = null
     this.particleProps = null
 
+    this.isListeningToResize = false
+    this.debouncedResize = debounce(this.resize.bind(this), 250)
+
     this.start()
   }
 
@@ -125,6 +129,12 @@ export default class Animation {
   }
 
   resize() {
+    if (this.isListeningToResize) {
+      this.$window.removeEventListener('resize', this.debouncedResize)
+
+      this.isListeningToResize = false
+    }
+
     const width = this.$base !== null ? this.$base.offsetWidth : this.$window.innerWidth
     const height = this.$base !== null ? this.$base.offsetHeight : this.$window.innerHeight
 
@@ -140,6 +150,12 @@ export default class Animation {
 
     this.center[0] = 0.5 * this.canvas.a.width
     this.center[1] = 0.5 * this.canvas.a.height
+
+    if (!this.isListeningToResize) {
+      this.$window.addEventListener('resize', this.debouncedResize)
+
+      this.isListeningToResize = true
+    }
   }
 
   initParticles() {

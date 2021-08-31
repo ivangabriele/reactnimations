@@ -6,7 +6,7 @@ import sourcemaps from 'rollup-plugin-sourcemaps'
 const FORMATS = ['cjs', 'esm']
 
 const configs = FORMATS.map(format => ({
-  external: [/@babel\/runtime/, 'react', 'simplex-noise'],
+  external: [/@babel\/runtime/, 'lodash.debounce', 'react', 'simplex-noise'],
 
   input: './index.js',
 

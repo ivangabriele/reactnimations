@@ -1,3 +1,5 @@
+import debounce from 'lodash.debounce'
+
 const HALF_PI = 0.5 * Math.PI
 
 const lerp = (n1, n2, speed) => (1 - speed) * n1 + speed * n2
@@ -98,6 +100,9 @@ export default class Animation {
     this.tick = null
     this.velocities = null
 
+    this.isListeningToResize = false
+    this.debouncedResize = debounce(this.resize.bind(this), 250)
+
     this.start()
   }
 
@@ -127,6 +132,12 @@ export default class Animation {
   }
 
   resize() {
+    if (this.isListeningToResize) {
+      this.$window.removeEventListener('resize', this.debouncedResize)
+
+      this.isListeningToResize = false
+    }
+
     const width = this.$base !== null ? this.$base.offsetWidth : this.$window.innerWidth
     const height = this.$base !== null ? this.$base.offsetHeight : this.$window.innerHeight
 
@@ -142,6 +153,12 @@ export default class Animation {
 
     this.center[0] = 0.5 * this.canvas.a.width
     this.center[1] = 0.5 * this.canvas.a.height
+
+    if (!this.isListeningToResize) {
+      this.$window.addEventListener('resize', this.debouncedResize)
+
+      this.isListeningToResize = true
+    }
   }
 
   initParticles() {
@@ -233,21 +250,6 @@ export default class Animation {
     this.ctx.a.restore()
   }
 
-  draw() {
-    this.tick += 1
-
-    this.ctx.a.clearRect(0, 0, this.canvas.a.width, this.canvas.a.height)
-
-    this.ctx.b.fillStyle = this.backgroundColor
-    this.ctx.b.fillRect(0, 0, this.canvas.a.width, this.canvas.a.height)
-
-    this.drawParticles()
-    this.renderGlow()
-    this.render()
-
-    this.animationFrameId = this.$window.requestAnimationFrame(this.draw.bind(this))
-  }
-
   renderGlow() {
     this.ctx.b.save()
     this.ctx.b.filter = 'blur(8px) brightness(200%)'
@@ -267,5 +269,20 @@ export default class Animation {
     this.ctx.b.globalCompositeOperation = 'lighter'
     this.ctx.b.drawImage(this.canvas.a, 0, 0)
     this.ctx.b.restore()
+  }
+
+  draw() {
+    this.tick += 1
+
+    this.ctx.a.clearRect(0, 0, this.canvas.a.width, this.canvas.a.height)
+
+    this.ctx.b.fillStyle = this.backgroundColor
+    this.ctx.b.fillRect(0, 0, this.canvas.a.width, this.canvas.a.height)
+
+    this.drawParticles()
+    this.renderGlow()
+    this.render()
+
+    this.animationFrameId = this.$window.requestAnimationFrame(this.draw.bind(this))
   }
 }

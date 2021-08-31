@@ -1,21 +1,21 @@
-# Reactnimations Coalesce
+# Reactnimations Pipeline
 
 _This is a work in progress._
 
 ## Usage
 
 ```sh
-npm/yarn i -E @reactnimations/coalesce
+npm/yarn i -E @reactnimations/pipeline
 ```
 
 ```js
-import Coalesce from '@reactnimations/coalesce'
+import Pipeline from '@reactnimations/pipeline'
 
 const MyComponents = () => (
   <>
-    <Coalesce />
+    <Pipeline />
     <div style={{ position: "absolute" }}>
-      <h1>Coalesce Animation as a fullscreen background!</h1>
+      <h1>Pipeline Animation as a fullscreen background!</h1>
       <h2>What else?</h1>
     </div>
   </>
@@ -56,7 +56,7 @@ Also, `className` and `style` are exposed.
 }
 ```
 
-Check the [source code](https://github.com/ivangabriele/reactnimations/blob/main/packages/coalesce/Animation.js) to see
+Check the [source code](https://github.com/ivangabriele/reactnimations/blob/main/packages/pipeline/Animation.js) to see
 the default values.
 
 ## Credits

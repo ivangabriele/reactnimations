@@ -8,7 +8,7 @@ const DEFAULT_PROPS = {
   settings: {},
 }
 
-const Coalesce = props => {
+const Pipeline = props => {
   const { baseRef, className, settings, style } = { ...DEFAULT_PROPS, ...props }
 
   const canvasRef = React.useRef(null)
@@ -43,4 +43,4 @@ const Coalesce = props => {
   return <canvas ref={canvasRef} className={className} style={style} />
 }
 
-export default Coalesce
+export default Pipeline
