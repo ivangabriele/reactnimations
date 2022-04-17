@@ -1066,10 +1066,10 @@
     eslint-plugin-sort-keys-fix "1.1.2"
     prettier "2.3.2"
 
-"@ivangabriele/prettier-config@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@ivangabriele/prettier-config/-/prettier-config-2.0.1.tgz#a810b9d5174116c3eca96d96f42c252aac522ddb"
-  integrity sha512-bnEuBx/iYfvePsTt7tIMGekXLNICfgXCBS69Z43Wivi1h+j0I03B9v4WDQq4IeEDYeiZd7GJP1Pwl3jFdosDDA==
+"@ivangabriele/prettier-config@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@ivangabriele/prettier-config/-/prettier-config-3.0.2.tgz#27cc7be7b9787248936cc2744ab0750f033320a6"
+  integrity sha512-IlkhHdhDvj6me23zhB4xjXUdFLJGGeE1Od3gof04BzgLL+439bMHFQA1ZuA//+F+ENtDxNvY9dg14aOLzaAU1Q==
 
 "@material-ui/core@4.12.3":
   version "4.12.3"
