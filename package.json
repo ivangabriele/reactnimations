@@ -30,7 +30,7 @@
     "@babel/preset-react": "7.14.5",
     "@ivangabriele/eslint-config-react": "1.5.0",
     "@ivangabriele/prettier-config": "3.0.2",
-    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-babel": "6.0.3",
     "@types/react-select": "5.0.0",
     "husky": "8.0.0",
     "lint-staged": "12.1.1",
