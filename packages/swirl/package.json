@@ -9,9 +9,9 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "@babel/runtime": "7.15.4",
+    "@babel/runtime": "7.22.6",
     "lodash.debounce": "4.0.8",
-    "simplex-noise": "3.0.0"
+    "simplex-noise": "3.0.1"
   },
   "peerDependencies": {
     "react": "17.0.2",
