@@ -16,7 +16,7 @@
     "packages:build": "npm run build --workspaces"
   },
   "dependencies": {
-    "@material-ui/core": "4.12.3",
+    "@mui/material": "5.0.0",
     "next": "12.1.0",
     "ramda": "0.27.1",
     "react": "17.0.2",
